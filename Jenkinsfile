@@ -21,7 +21,7 @@ pipeline {
             }
             steps {
                 dir('./nuxt') {
-                    sh 'cat .env'
+                    load "./env"
                     sh 'export JENKINS_NODE_COOKIE=dontKillMe; pm2 start ecosystem.config.cjs'
                 }
             }
@@ -43,7 +43,7 @@ pipeline {
             }
             steps {
                 dir('./strapi') {
-                    sh 'cat .env'
+                    load "./env"
                     sh 'export JENKINS_NODE_COOKIE=dontKillMe; NODE_ENV=production pm2 start'
                 }
             }
