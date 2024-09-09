@@ -16,14 +16,12 @@ pipeline {
             }
         }
         stage('Deploy nuxt') {
-            environment {
-                PORT = "9095"
-            }
             tools {
                 nodejs 'node-21.11.1'
             }
             steps {
                 dir('./nuxt') {
+                    sh 'cat .env'
                     sh 'export JENKINS_NODE_COOKIE=dontKillMe; pm2 start ecosystem.config.cjs'
                 }
             }
@@ -40,14 +38,12 @@ pipeline {
             }
         }
         stage('Deploy strapi') {
-            environment {
-                PORT = "1338"
-            }
             tools {
                 nodejs 'node-21.11.1'
             }
             steps {
                 dir('./strapi') {
+                    sh 'cat .env'
                     sh 'export JENKINS_NODE_COOKIE=dontKillMe; NODE_ENV=production pm2 start'
                 }
             }
