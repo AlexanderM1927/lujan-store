@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'app',
+      name: 'LujanStrapi',
       script: 'npm',
       args: 'start',
     },
