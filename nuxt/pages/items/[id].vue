@@ -7,7 +7,7 @@
                     :src="product.images[0]"
                     alt="{{ product.name }}"
                     id="main-image"
-                >
+                />
                 <div class="slider-product" v-show="product.images.length > 1">
                     <div
                         v-for="image in product.images"
@@ -35,7 +35,7 @@
                 </div>
                 <div class="product-container__variants">
                     <div v-show="product.colors && product.colors.length > 0">
-                        <b>Color:</b>
+                        <b>{{ texts.variant_color }}:</b>
                         <div class="variants__colors">
                             <input
                                 v-for="(color, index) in product.colors" 
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div v-show="product.sizes && product.sizes.length > 0">
-                        <b>Talla:</b>
+                        <b>{{ texts.variant_size }}:</b>
                         <div class="variants__size">
                             <select
                                 id="variant-size"

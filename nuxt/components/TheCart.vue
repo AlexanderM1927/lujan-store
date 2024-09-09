@@ -82,7 +82,9 @@ const purchaseByWhatsapp = (() => {
         const element = cartProducts.value[i]
         const productName = element.name
         const quantity = element.quantity
-        listOfProducts += `${productName} - Cantidad: ${quantity}`
+        const color = element.selectedVariants.color
+        const size = element.selectedVariants.size
+        listOfProducts += `${productName} ${color ? '- Color: ' + color : ''} ${size ? '- Talla: ' + size : ''} - Cantidad: ${quantity}`
         listOfProducts += `,%20 %0A`
     }
     window.open(`https://wa.me/${props.data.whatsappPhone}?text=${listOfProducts}`)
