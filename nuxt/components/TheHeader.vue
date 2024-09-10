@@ -68,34 +68,6 @@
                             </NuxtLink>
                         </div>
                     </li>
-                    <li
-                        v-if="!user.logged"
-                    >
-                        <NuxtLink
-                            :title="texts.pages.login" 
-                            class="menu-items-anchor anchor anchor-opacity anchor-underline anchor-primary" 
-                            to="/login"
-                        >{{ texts.pages.login }}</NuxtLink>
-                    </li>
-                    <li
-                        v-if="user.logged"
-                    >
-                        <NuxtLink
-                            title="Mis Pedidos" 
-                            class="menu-items-anchor anchor anchor-opacity anchor-underline anchor-primary" 
-                            to="/orders"
-                        >Mis Pedidos</NuxtLink>
-                    </li>
-                    <li
-                        v-if="user.logged"
-                    >
-                        <a
-                            title="Logout"
-                            class="menu-items-anchor anchor anchor-opacity anchor-underline anchor-primary" 
-                            @click="logout"
-                            href="#"
-                        >Logout</a>
-                    </li>
                     <li>
                         <div class="menu-icon">
                             <div class="menu-items__product">
@@ -157,34 +129,6 @@
                             </NuxtLink>
                         </li>
                     </ul>
-                </li>
-                <li
-                    v-if="!user.logged"
-                >
-                    <NuxtLink 
-                        class="anchor anchor-third" 
-                        to="/login"
-                        :title="texts.pages.login"
-                    >{{ texts.pages.login }}</NuxtLink>
-                </li>
-                <li
-                    v-if="user.logged"
-                >
-                    <NuxtLink 
-                        class="anchor anchor-third" 
-                        to="/orders"
-                        title="Mis Pedidos"
-                    >Mis Pedidos</NuxtLink>
-                </li>
-                <li
-                    v-if="user.logged"
-                >
-                    <a 
-                        title="Logout" 
-                        class="anchor anchor-third" 
-                        @click="logout" 
-                        href="#"
-                    >Logout</a>
                 </li>
             </ul>
             <SocialMediaLinks :data="data" :color="'black'"></SocialMediaLinks>

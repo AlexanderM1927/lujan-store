@@ -13,7 +13,8 @@
             </div>
         </section>
         <TopCategories></TopCategories>
-        <LatestPosts></LatestPosts>
+        <!-- <LatestPosts></LatestPosts> -->
+        <LatestProducts></LatestProducts>
     </template>
     <template v-else>
         <LoadingComponent
