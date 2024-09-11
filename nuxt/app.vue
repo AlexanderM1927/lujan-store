@@ -54,10 +54,10 @@ onMounted(async () => {
     isLoading.value = false
 })
 useHead({
-  title: `${appConfig.public.header}`,
-  meta: [
-    { name: 'description', content: appConfig.public.description }
-  ],
+    title: `${appConfig.public.header}`,
+    meta: [
+        { name: 'description', content: appConfig.public.description }
+    ],
 })
 
 </script>
